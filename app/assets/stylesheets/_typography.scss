@@ -1,0 +1,15 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+	padding: 0;
+	margin: 0;
+	font-weight: 400;
+  color: $dark-font-color;
+}
+
+p {
+	padding-bottom: modular-scale(0, $base-size);
+}

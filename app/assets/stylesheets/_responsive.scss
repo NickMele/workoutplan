@@ -1,0 +1,11 @@
+@media all and (min-width: 25em) {
+	html {
+		font-size: $base-font-size-tablet;
+	}
+}
+
+@media all and (min-width: 62em) {
+	html {
+		font-size: $base-font-size;
+	}
+}

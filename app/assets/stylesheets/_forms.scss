@@ -1,0 +1,77 @@
+form {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+.form-actions {
+	display: flex;
+	margin-top: modular-scale(1, $base-size);
+
+	.button {
+		flex: 1;
+	}
+}
+
+label {
+	padding-top: modular-scale(1, $base-size);
+	padding-left: modular-scale(0, $base-size);
+	padding-bottom: modular-scale(-3, $base-size);
+	display: block;
+	color: $dark-font-color;
+}
+
+input[type=text],
+input[type=number],
+input[type=email] {
+	box-sizing: border-box;
+	border: none;
+	background: $input-background-color;
+	display: block;
+	border-top: 1px solid $input-border-color;
+	border-bottom: 1px solid $input-border-color;
+	width: 100%;
+	padding: modular-scale(0, $base-size);
+	border-radius: 0;
+	box-shadow: 0;
+	color: $base-font-color;
+	-webkit-appearance: none;
+
+	&:focus {
+		border-color: darken($input-border-color, 20%);
+	}
+
+	&.error {
+		@extend .error;
+		border-color: $red;
+	}
+}
+
+textarea {
+	@extend input[type=text];
+	height: modular-scale(5);
+
+	&.error {
+		@extend .error;
+		border-color: $red;
+	}
+}
+
+.input-with-button {
+	display: flex;
+
+	input {
+		flex: 3;
+	}
+	button {
+		flex: 1;
+	}
+}
+
+.error {
+	color: $red;
+}
+.error-message {
+	padding-left: modular-scale(0);
+	padding-top: modular-scale(-3);
+}

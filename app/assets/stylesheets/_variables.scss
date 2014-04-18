@@ -1,0 +1,42 @@
+$gray: rgba(35,35,35,1);
+$gray-light: lighten($gray, 5%);
+$gray-dark: darken($gray, 5%);
+$green: rgba(92, 184, 92,.95);
+$blue: rgba(66, 139, 202,.95);
+$red: rgba(210, 50, 45,.95);
+
+$application-background: $gray;
+
+$base-font-size: 62.5%;
+$base-font-size-tablet: 70%;
+$base-font-size-mobile: 75%;
+$base-size: 1.3rem;
+$base-font-color: rgba(180,180,180,1);
+$base-link-color: $blue;
+$base-border-color: $gray-dark;
+$base-shadow-color: darken($gray, 5%);
+
+$light-font-color: rgba(200,200,200,1);
+$dark-font-color: rgba(100,100,100,1);
+
+$shadow-color: $base-shadow-color;
+$shadow-blur: modular-scale(1, $base-size);
+
+$border-color: $base-border-color;
+$border-color-light: lighten($base-border-color,7%);
+$border-color-dark: darken($base-border-color,7%);
+
+$button-default: lighten($gray-light,5%);
+$button-green: $green;
+$button-blue: $blue;
+$button-red: $red;
+
+$input-background-color: $gray-light;
+$input-border-color: $border-color-light;
+
+$link-list-border-color: $border-color-light;
+
+$menu-width: 80%;
+$menu-overlay: rgba(0,0,0,.9);
+
+$timing-function: cubic-bezier(0.10, 0.70, 0.10, 1);

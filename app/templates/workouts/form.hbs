@@ -1,0 +1,8 @@
+<form {{action "save" on="submit"}}>
+  <div class="flex-row actions">
+    <a {{action "cancel"}} class="red"> <i class="fa fa-times"></i> Cancel </a>
+    <a {{action "save"}} class="green"> <i class="fa fa-arrow-circle-o-down"></i> Save</a>
+  </div>
+  <label for="">What's the workout name?</label>
+  {{input type="text" value=name placeholder="ex: Bench Press, Curls..."}}
+</form>

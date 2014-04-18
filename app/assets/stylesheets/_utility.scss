@@ -1,0 +1,34 @@
+.padded {
+  padding: modular-scale(0, $base-size);
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.no-margin-top {
+  margin-top: 0 !important;
+}
+.margin-bottom-large {
+  margin-bottom: 10rem;
+}
+
+.red {
+  color: $red !important;
+}
+.blue {
+  color: $blue !important;
+}
+.green {
+  color: $green !important;
+}
+.fadein {
+  animation: fadein .1s;
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

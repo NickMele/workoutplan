@@ -1,0 +1,5 @@
+.day-list {
+  @extend .link-list;
+  padding-bottom: modular-scale(0,$base-size);
+  
+}

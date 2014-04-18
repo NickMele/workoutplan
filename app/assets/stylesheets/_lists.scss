@@ -1,0 +1,32 @@
+.link-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	&.border-top {
+		border-top: 1px solid $link-list-border-color;
+	}
+
+	li {
+		padding: 0;
+		margin: 0;
+		border-bottom: 1px solid $link-list-border-color;
+
+		> a,
+		> span,
+		.padded {
+			padding: modular-scale(0, $base-size);
+			display: flex;
+			color: $base-font-color;
+			text-decoration: none;
+			font-weight: 300;
+			justify-content: space-between;
+			align-items: center;
+		}
+		a {
+			color: $base-font-color;
+			text-decoration: none;
+			font-weight: 300;
+		}
+	}
+}

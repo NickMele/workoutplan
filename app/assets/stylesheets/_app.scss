@@ -1,0 +1,41 @@
+html {
+	font-size: $base-font-size-mobile;
+	color: $base-font-color;
+	background: $application-background;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: $base-size;
+	margin: 0;
+	padding: 0;
+  padding-bottom: modular-scale(3,$base-size);
+}
+
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  color: $base-link-color;
+}
+
+.flex-row {
+  display: flex;
+  
+  &.actions {
+    justify-content: space-between;
+    background: $gray-light;
+    text-shadow: 0 0 .2rem $base-shadow-color;
+    a {
+      padding: modular-scale(0,$base-size);
+      padding-top: 0;
+      text-decoration: none;
+      font-size: modular-scale(0,$base-size);
+      i {
+        margin-right: modular-scale(-3,$base-size);
+      }
+    }
+  }
+  
+  .flex {
+    flex: 1;
+  }
+}

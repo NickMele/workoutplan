@@ -1,0 +1,15 @@
+<div class="flex-row actions">
+  {{#link-to "routines.edit" model}}<i class="fa fa-check-circle-o"></i> Edit{{/link-to}}
+  <a {{action "delete" model}} class="red"><i class="fa fa-times-circle"></i> Delete</a>
+</div>
+
+{{!-- LIST THE DAYS --}}
+
+<h2 class="padded no-padding-bottom">Workouts</h2>
+<ul class="link-list">
+  {{#each workout in model.workouts}}
+    <li>
+      <span>{{workout.name}}</span>
+    </li>
+  {{/each}}
+</ul>

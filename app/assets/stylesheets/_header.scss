@@ -1,0 +1,86 @@
+.menu-wrapper {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 80%;
+	transform: translate3D(100%,0,0);
+	height: 100%;
+	z-index: 1;
+	box-sizing: border-box;
+	background: $gray-light;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	transition: transform .25s $timing-function;
+	
+	&.menu-open {
+		transform: translate3D(0,0,0);
+	}
+	
+	.menu {
+		width: $menu-width;
+		height: 100%;
+		background: $gray-light;
+		margin-left: 100%;
+	}
+	
+	.actions {
+		display: flex;
+		padding: modular-scale(0, $base-size);
+		border-bottom: 1px solid darken($gray-light,1%);
+		justify-content: space-between;
+		font-size: modular-scale(1, $base-size);			
+	}
+	
+	.link-list {
+		li {
+			border-bottom: 0;
+		}
+	}
+}
+
+.main-content {
+	display: block;
+	position: relative;
+	transform: translate3D(0,0,0);
+	transition: transform .25s $timing-function;
+	z-index: 2;
+	background: $application-background;
+	
+	&.menu-open {
+		transform: translate3D(-80%,0,0); /* X value must be same as Nav width */
+		border-right: 1px solid $base-border-color;
+	}
+}
+
+.header {
+	display: flex;
+	padding: modular-scale(0, $base-size);
+	background: $gray-light;
+	align-items: flex-start;
+	position: relative;
+	z-index: 1;
+	text-shadow: 0 0 .2rem $base-shadow-color;
+	-webkit-backface-visibility: hidden;
+
+	.title {
+		flex: 1;
+		// overflow: hidden;
+		// white-space: nowrap;
+		box-sizing: border-box;
+		transition: all 200ms $timing-function;
+		font-size: modular-scale(1, $base-size);
+		font-weight: 300;
+	}
+
+	.menu-icon {
+		flex: none;
+		transition: all 200ms $timing-function;
+		text-decoration: none;
+		font-size: modular-scale(1, $base-size);
+		color: $base-font-color;
+		-webkit-appearance: none;
+		width: 2rem;
+		text-align: center;
+	}
+
+}

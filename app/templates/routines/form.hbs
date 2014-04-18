@@ -1,0 +1,25 @@
+<form {{action "saveRoutine" on="submit"}}>
+  <div class="flex-row actions">
+    <a {{action "cancel"}} class="red"> <i class="fa fa-times"></i> Cancel </a>
+    <a {{action "saveRoutine"}} class="green"> <i class="fa fa-arrow-circle-o-down"></i> Save</a>
+  </div>
+
+  <label for="">Give your routine a name</label>
+  {{input type="text" value=name placeholder="ex: Upper Body, Arms..."}}
+  
+  <label for="">What days will you do this routine?</label>
+  {{view "routine-days"}}
+
+  <label for="">What's in this routine?</label>
+  {{view "autocomplete" placeholder="Start typing..." controllerBinding="controller"}}
+  <ul class="link-list margin-bottom-large">
+    {{#each workout in workouts}}
+      <li>
+          <span>
+            {{workout.name}}
+            <i class="fa fa-times-circle-o red" {{action "removeWorkout" workout bubbles="false"}}></i>
+          </span>
+      </li>
+    {{/each}}
+  </ul>
+</form>

@@ -1,0 +1,72 @@
+.week-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &.border-top {
+    border-top: 1px solid $link-list-border-color;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    
+    > a {
+      padding: modular-scale(-1, $base-size);
+      margin: 0;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      box-sizing: border-box;
+      border-left: .5rem solid transparent;
+      border-bottom: 1px solid $link-list-border-color;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      // height: modular-scale(4.5, $base-size);
+      
+      &.current {
+        border-left-color: $blue;
+        .date,
+        .day {
+          color: $blue;
+        }
+      }
+      &.upcoming {
+        opacity: .25;
+      }
+      &.completed {
+        .status-container {
+          background: rgba(92, 184, 92,.1);
+          color: $green;
+          display: flex;
+        }
+      }
+      &.skipped {
+        .status-container {
+          background: rgba(210, 50, 45,.1);
+          color: $red;
+          display: flex;
+        }
+      }
+
+      .date {
+        flex: 1 0;
+        font-size: modular-scale(1, $base-size);
+        line-height: 1;
+        text-align: right;
+      }
+      .day-info {
+        flex: 2 0;
+        font-size: modular-scale(0, $base-size);
+        color: $light-font-color;
+        .routines {
+          font-size: modular-scale(-1, $base-size);
+          line-height: modular-scale(0, $base-size);
+          color: $dark-font-color;
+        }
+      }
+    }
+  }
+}

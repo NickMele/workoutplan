@@ -1,0 +1,59 @@
+.routines-list {
+  @extend .link-list;
+  
+  li {
+    > a,
+    > span,
+    .padded {
+      justify-content: flex-start;
+      i:first-of-type {
+        margin-right: modular-scale(-1, $base-size);
+      }
+      a {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.day-selector {
+  @extend .link-list;
+  
+  li {
+    &.selected {
+      span,
+      i {
+        color: $green;
+      }
+    }
+  }
+}
+
+.suggestions {
+  @extend .link-list;
+  
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
+
+  .suggestion {
+    background: darken($input-background-color, 1%);
+    padding: modular-scale(0, $base-size) modular-scale(0, $base-size);
+
+    &:last-of-type {
+      border-bottom: 2px solid $input-border-color;
+      margin-bottom: modular-scale(1, $base-size);
+    }
+    
+    &:active,
+    &.selected {
+      background: $blue;
+      color: rgba(255,255,255,.9);
+    }
+  }
+
+}
