@@ -1,4 +1,5 @@
-export default Ember.ObjectController.extend({
+var BaseController = require('app/controllers/base').default
+export default BaseController.extend({
   
   isEditing: false,
   

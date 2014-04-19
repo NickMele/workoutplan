@@ -22,11 +22,10 @@ a {
   
   &.actions {
     justify-content: space-between;
-    background: $gray-light;
+    border-bottom: 1px solid $border-color-light;
     text-shadow: 0 0 .2rem $base-shadow-color;
     a {
       padding: modular-scale(0,$base-size);
-      padding-top: 0;
       text-decoration: none;
       font-size: modular-scale(0,$base-size);
       i {

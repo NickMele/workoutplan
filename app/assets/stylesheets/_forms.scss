@@ -14,7 +14,7 @@ form {
 }
 
 label {
-	padding-top: modular-scale(1, $base-size);
+	padding-top: modular-scale(0, $base-size);
 	padding-left: modular-scale(0, $base-size);
 	padding-bottom: modular-scale(-3, $base-size);
 	display: block;
@@ -36,6 +36,7 @@ input[type=email] {
 	box-shadow: 0;
 	color: $base-font-color;
 	-webkit-appearance: none;
+	margin-bottom: modular-scale(0, $base-size);
 
 	&:focus {
 		border-color: darken($input-border-color, 20%);

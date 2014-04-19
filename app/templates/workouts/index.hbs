@@ -5,18 +5,18 @@
     </a>
   {{else}}
     <a {{action "edit"}}>
-      <i class="fa fa-check-circle-o"></i> Edit
+      <i class="fa fa-pencil"></i> Edit
     </a>
    {{/if}}
   {{#link-to "routines.new"}}<i class="fa fa-plus"></i> Create{{/link-to}}
 </div>
-<ul class="workouts-list border-top">
+<ul class="workouts-list">
   {{#each workout in model itemController="workouts.show"}}
     <li>
       <span>
         {{#if parentController.isEditing}}
-          <i class="fa fa-lg fa-times-circle fadein red" {{action "delete" workout}}></i>
-          {{#link-to "workouts.edit" workout}}{{workout.name}}<i class="fa fa-angle-right fadein"></i>{{/link-to}}
+          <i class="fa fa-lg fa-times-circle red" {{action "delete" workout}}></i>
+          {{#link-to "workouts.edit" workout}}{{workout.name}}<i class="fa fa-angle-right"></i>{{/link-to}}
         {{else}}
           {{#link-to "workouts.show" workout}}{{workout.name}}{{/link-to}}
         {{/if}}

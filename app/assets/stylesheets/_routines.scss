@@ -6,7 +6,7 @@
     > span,
     .padded {
       justify-content: flex-start;
-      i:first-of-type {
+      > i:first-of-type {
         margin-right: modular-scale(-1, $base-size);
       }
       a {

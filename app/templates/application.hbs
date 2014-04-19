@@ -1,27 +1,18 @@
-<div {{bind-attr class=":menu-wrapper menuOpen"}}>
-  <div class="menu">
-    <div class="actions">
-      <a class="menu-icon" {{action 'toggleMenu'}}>
-        <i class="fa fa-ellipsis-v"></i>
-      </a>
-      <a class="menu-close-icon" {{action 'toggleMenu'}}>
-        <i class="fa fa-chevron-right"></i>
-      </a>
-    </div>
-    <ul class="link-list">
-      {{!-- <li>{{#link-to 'week' currentWeek}}This Week{{/link-to}}</li>
-      <li>{{#link-to 'routines'}}Routines{{/link-to}}</li> --}}
-    </ul>
+<div {{bind-attr class=":menu menuOpen"}}>
+  <div class="actions">
+    <a class="menu-close-icon" {{action 'toggleMenu'}}>
+      <i class="fa fa-times"></i>
+    </a>
   </div>
+  <ul class="link-list">
+    {{!-- <li>{{#link-to 'week' currentWeek}}This Week{{/link-to}}</li> --}}
+    <li>{{#link-to 'routines'}}Routines{{/link-to}}</li>
+    <li>{{#link-to 'workouts'}}Workouts{{/link-to}}</li>
+  </ul>
 </div>
 
 <div {{bind-attr class=":main-content menuOpen"}}>
-  <div class="header">
-    <div class="title">{{title}}</div>
-    <a class="menu-icon" {{action 'toggleMenu'}}>
-      <i class="fa fa-ellipsis-v"></i>
-    </a>
-  </div>
+  {{render "header"}}
   
   {{outlet}}
 </div>

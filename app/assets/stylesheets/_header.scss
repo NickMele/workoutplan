@@ -1,26 +1,20 @@
-.menu-wrapper {
+.menu {
 	position: fixed;
 	top: 0;
-	right: 0;
-	width: 80%;
-	transform: translate3D(100%,0,0);
+	left: 0;
+	width: $menu-width;
+	transform: translate3D(-100%,0,0);
 	height: 100%;
 	z-index: 1;
 	box-sizing: border-box;
 	background: $gray-light;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
-	transition: transform .25s $timing-function;
+	transition: transform $menu-animation-speed $timing-function;
 	
 	&.menu-open {
 		transform: translate3D(0,0,0);
-	}
-	
-	.menu {
-		width: $menu-width;
-		height: 100%;
-		background: $gray-light;
-		margin-left: 100%;
+		border-right: 1px solid $gray;
 	}
 	
 	.actions {
@@ -42,13 +36,12 @@
 	display: block;
 	position: relative;
 	transform: translate3D(0,0,0);
-	transition: transform .25s $timing-function;
+	transition: transform $menu-animation-speed $timing-function;
 	z-index: 2;
 	background: $application-background;
 	
 	&.menu-open {
-		transform: translate3D(-80%,0,0); /* X value must be same as Nav width */
-		border-right: 1px solid $base-border-color;
+		transform: translate3D($menu-width,0,0); /* X value must be same as Nav width */
 	}
 }
 
@@ -56,7 +49,7 @@
 	display: flex;
 	padding: modular-scale(0, $base-size);
 	background: $gray-light;
-	align-items: flex-start;
+	align-items: center;
 	position: relative;
 	z-index: 1;
 	text-shadow: 0 0 .2rem $base-shadow-color;
@@ -64,23 +57,29 @@
 
 	.title {
 		flex: 1;
-		// overflow: hidden;
-		// white-space: nowrap;
+		overflow: hidden;
+		white-space: nowrap;
 		box-sizing: border-box;
 		transition: all 200ms $timing-function;
-		font-size: modular-scale(1, $base-size);
+		font-size: modular-scale(.5, $base-size);
 		font-weight: 300;
+		text-align: center;
+		padding: 0 3rem;
 	}
 
 	.menu-icon {
-		flex: none;
+		flex: 0;
 		transition: all 200ms $timing-function;
 		text-decoration: none;
-		font-size: modular-scale(1, $base-size);
+		font-size: modular-scale(.5, $base-size);
 		color: $base-font-color;
 		-webkit-appearance: none;
 		width: 2rem;
 		text-align: center;
+		z-index: 5;
+		i {
+			padding-right: modular-scale(0, $base-size);
+		}
 	}
 
 }

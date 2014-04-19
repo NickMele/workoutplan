@@ -18,7 +18,7 @@ class Api::V1::RoutinesController < ApplicationController
     
     # process any workouts that were passed
     unless params[:workouts].nil?
-      params.workouts = Workout.find(params[:workouts])
+      params[:workouts] = Workout.find(params[:workouts])
     end
     
     # make a new routine
@@ -37,7 +37,7 @@ class Api::V1::RoutinesController < ApplicationController
     
     # process any workouts that were passed
     unless params[:workouts].nil?
-      params.workouts = Workout.find(params[:workouts])
+      params[:workouts] = Workout.find(params[:workouts])
     end
     
     if @routine.update(params)

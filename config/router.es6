@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
   // in config/routes.rb
 
   // location: 'history'
+  closeMenuOnUrlChange: function() {
+    this.send('closeMenu');
+  }.on('didTransition')
 });
 
 Router.map(function() {

@@ -1,6 +1,6 @@
 $gray: rgba(35,35,35,1);
-$gray-light: lighten($gray, 5%);
-$gray-dark: darken($gray, 5%);
+$gray-light: lighten($gray, 2.5%);
+$gray-dark: darken($gray, 2.5%);
 $green: rgba(92, 184, 92,.95);
 $blue: rgba(66, 139, 202,.95);
 $red: rgba(210, 50, 45,.95);
@@ -23,8 +23,8 @@ $shadow-color: $base-shadow-color;
 $shadow-blur: modular-scale(1, $base-size);
 
 $border-color: $base-border-color;
-$border-color-light: lighten($base-border-color,7%);
-$border-color-dark: darken($base-border-color,7%);
+$border-color-light: lighten($base-border-color,5%);
+$border-color-dark: darken($base-border-color,5%);
 
 $button-default: lighten($gray-light,5%);
 $button-green: $green;
@@ -36,7 +36,8 @@ $input-border-color: $border-color-light;
 
 $link-list-border-color: $border-color-light;
 
-$menu-width: 80%;
+$menu-width: 85%;
 $menu-overlay: rgba(0,0,0,.9);
+$menu-animation-speed: 200ms;
 
 $timing-function: cubic-bezier(0.10, 0.70, 0.10, 1);

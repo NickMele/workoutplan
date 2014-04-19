@@ -1,4 +1,6 @@
-export default Ember.ObjectController.extend({
+var BaseController = require('app/controllers/base').default
+export default BaseController.extend({
+  
   actions: {
     delete: function(model) {
       var _this = this;
