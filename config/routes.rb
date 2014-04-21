@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
+      resources :weeks, except: [:new, :edit, :create, :updates, :destroy]
+      resources :days, except: [:new, :edit, :create, :updates, :destroy]
       resources :entry_sets, except: [:new, :edit]
       resources :entries, except: [:new, :edit]
       resources :logs, except: [:new, :edit]

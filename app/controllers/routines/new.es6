@@ -1,6 +1,5 @@
 var BaseController = require('app/controllers/base').default
 export default BaseController.extend({
-  // needs: ['autocomplete'],
   
   actions: {
     cancel: function() {
@@ -24,8 +23,8 @@ export default BaseController.extend({
       var self = this,
           workouts = self.store.find('workout', { name: term });
       workouts.then(function(workouts) {
-        var newWorkout = self.store.createRecord('workout', { name: term });
-        workouts.insertAt(0, newWorkout);
+        // var newWorkout = self.store.createRecord('workout', { name: term });
+        // workouts.insertAt(0, newWorkout);
         context.set('content', workouts);
       });      
     },
