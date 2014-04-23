@@ -14,9 +14,9 @@ export default Ember.CollectionView.extend({
           day = this.get('content');
       if (!days) {
         this.set('selected', false);
+      } else {
+        this.set('selected', days.contains(day));
       }
-      
-      this.set('selected', days.contains(day)); 
       
     }.observes('controller.days.@each').on('init'),
     
