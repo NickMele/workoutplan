@@ -1,0 +1,7 @@
+<ul class="link-list">
+  {{#each week in model}}
+    <li>
+      {{#link-to "week" week}}{{format-date week.startDate format="[Week of] MMM Do"}}{{/link-to}}
+    </li>
+  {{/each}}
+</ul>

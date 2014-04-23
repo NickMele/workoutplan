@@ -18,28 +18,30 @@ class Api::V1::DaysController < ApplicationController
     end
     
     @response = {
-      :days => @days,
-      :routines => @routines
+      :days => @days
     }
-    respond_with @response
+    respond_with merged_response
   end
 
   # GET /days/1
   def show
-    @routines = Routine.all
-    
     d = Date.ordinal(Time.now.year, params[:id].to_i)
+    @routines = Routine.where("'#{d.strftime('%w')}' = ANY (days)")
     @day = get_day(d)
     
     @response = {
-      :day => @day,
-      :routines => @routines
+      :day => @day
     }
     
-    respond_with @response
+    respond_with merged_response
   end
 
   private
+  
+  # merges our custom response with the serialized routines data which contains associations
+  def merged_response
+    @response.merge(@routines.active_model_serializer.new(@routines, {:root=>'routines'}).as_json)
+  end
 
   # gets info for the day
   def get_day(d)

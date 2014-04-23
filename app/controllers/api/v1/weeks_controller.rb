@@ -19,10 +19,9 @@ class Api::V1::WeeksController < ApplicationController
     
     @response = {
       :weeks => @weeks,
-      :days => @days,
-      :routines => @routines
+      :days => @days
     }
-    respond_with @response
+    respond_with merged_response
   end
 
   # GET /weeks/1
@@ -33,14 +32,18 @@ class Api::V1::WeeksController < ApplicationController
     
     @response = {
       :week => @week,
-      :days => @days,
-      :routines => @routines
+      :days => @days
     }
     
-    respond_with @response
+    respond_with merged_response
   end
 
   private
+  
+  # merges our custom response with the serialized routines data which contains associations
+  def merged_response
+    @response.merge(@routines.active_model_serializer.new(@routines, {:root=>'routines'}).as_json)
+  end
 
   # gets info for the week including start,end,days
   def get_week(w)

@@ -1,0 +1,29 @@
+<ul class="week-list">
+  {{#each day in model.days itemController="week.day"}}
+    <li>
+      {{#link-to "week.day" day class=day.status}}
+        <div class="day-info">
+          <div class="day">
+            {{#if day.current}}
+              Today
+            {{else}}
+              {{format-date day.date format="dddd"}}
+            {{/if}}
+          </div>
+          <div class="routines">
+            {{#if day.totalRoutines}}
+              {{day.totalRoutines}} Routines
+              {{#if day.totalWorkouts}}
+                &middot;
+                {{day.totalWorkouts}} Workouts
+              {{/if}}
+            {{else}}
+              Rest Day
+            {{/if}}
+          </div>
+        </div>
+        <i class="fa fa-lg fa-angle-right"></i>
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>

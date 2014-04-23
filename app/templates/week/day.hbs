@@ -1,0 +1,14 @@
+{{#if routines}}
+  {{#each routine in routines}}
+    <h2 class="padded no-padding-bottom">{{routine.name}}</h2>
+    <ul {{bind-attr class=":day-list"}}>
+      {{#each workout in routine.workouts}}
+        <li>
+          {{#link-to "workouts.show" workout}}{{workout.name}}{{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/each}}
+{{else}}
+  Rest day!
+{{/if}}
