@@ -7,12 +7,6 @@ export default Ember.Route.extend({
     model.rollback();
   },
   actions: {
-    save: function(model) {
-      var _this = this;
-      model.save().then(function() {
-        _this.transitionTo('routines.show', model);
-      });
-    },
     cancel: function(model) {
       this.transitionTo('routines.show', model);
     }

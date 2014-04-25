@@ -12,7 +12,8 @@ export default Ember.ContainerView.extend({
 
   isDropdownVisible: false,
 
-  template: Ember.Handlebars.compile('{{view.content.name}}'),
+  // template: Ember.Handlebars.compile('{{view.content.name}}'),
+  templateName: 'autocomplete',
   classNames: 'autocomplete',
   childViews: ['inputView', 'dropdownView'],
   emptyView: null,
@@ -77,15 +78,15 @@ export default Ember.ContainerView.extend({
       }
     })
   }),
-  
+
   scrollIntoView: function() {
     Ember.run.later(this, function() {
       var $autocomplete = this.$()
         , offset = $autocomplete.offset();
-      
+
       // give some space
       offset.top -= 25;
-      
+
       $('html body').animate({
         scrollTop: offset.top
       });
@@ -117,7 +118,7 @@ export default Ember.ContainerView.extend({
     Ember.run.later(this, function() {
       Ember.$.proxy(this, 'hide');
       this.clear();
-    }, 100);    
+    }, 100);
   },
 
   search: function(term) {

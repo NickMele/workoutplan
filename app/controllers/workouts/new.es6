@@ -6,7 +6,7 @@ export default BaseController.extend({
         , workout = this.get('model');
 
       workout.save().then(function() {
-        self.transitionToRoute('workouts.show', workout);
+        self.transitionToRoute('workouts.index');
       });
     }
   }

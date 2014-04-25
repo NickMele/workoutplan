@@ -1,8 +1,8 @@
 var BaseRoute = require('app/routes/base').default
 export default BaseRoute.extend({
-  
+
   title: 'New Routine',
-  
+
   model: function() {
     return this.store.createRecord('routine');
   },
@@ -13,12 +13,6 @@ export default BaseRoute.extend({
     }
   },
   actions: {
-    save: function(model) {
-      var _this = this;
-      model.save().then(function() {
-        _this.transitionTo('routines.show', model);
-      });
-    },
     cancel: function() {
       this.transitionTo('routines.index');
     }
