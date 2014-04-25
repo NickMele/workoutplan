@@ -10,4 +10,3 @@ export default Ember.Handlebars.makeBoundHelper(function(context, block) {
     return context;   //  moment plugin not available. return data as is.
   }
 });
-
