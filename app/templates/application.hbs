@@ -1,8 +1,8 @@
 <div {{bind-attr class=":menu menuOpen"}}>
   <div class="actions">
-    <a class="menu-close-icon" {{action 'toggleMenu'}}>
+    <span class="menu-close-icon" {{action 'toggleMenu'}}>
       <i class="fa fa-times"></i>
-    </a>
+    </span>
   </div>
   <ul class="link-list">
     <li>{{#link-to 'week' currentWeek}}This Week{{/link-to}}</li>
@@ -13,6 +13,6 @@
 
 <div {{bind-attr class=":main-content menuOpen"}}>
   {{render "header"}}
-  
+
   {{outlet}}
 </div>
