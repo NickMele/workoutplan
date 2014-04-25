@@ -11,7 +11,7 @@ export default BaseRoute.extend({
   },
   actions: {
     cancel: function(model) {
-      this.transitionTo('workouts.show', model);
+      this.transitionTo('workouts.index');
     }
   }
 });
