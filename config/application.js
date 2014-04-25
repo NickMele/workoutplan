@@ -9,8 +9,8 @@
 //= require_tree ../app
 //= require_tree ./initializers
 
-window.App = require('app').default.create();
-
 Ember.LinkView.reopen({
   eventName: 'tap'
 });
+
+window.App = require('app').default.create();
