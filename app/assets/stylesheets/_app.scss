@@ -17,6 +17,11 @@ a {
   color: $base-link-color;
 }
 
+.wrapper {
+	width: 100%;
+	overflow-x: hidden;
+}
+
 .flex-row {
   display: flex;
 
