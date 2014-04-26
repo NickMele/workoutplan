@@ -39,7 +39,12 @@ gem 'modular-scale'
 gem 'font-awesome-rails'
 gem 'momentjs-rails'
 gem 'autoprefixer-rails'
+
+# heroku asset pipeline
 gem 'rails_12factor', group: :production
+
+# server
+gem 'unicorn'
 
 group :development do
   gem 'better_errors'
