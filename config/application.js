@@ -13,7 +13,7 @@ Ember.LinkView.reopen({
   eventName: 'tap'
 });
 
-if (!window.navigator.standalone) {
+if (window.navigator.standalone) {
   $('html').addClass('standalone')
 }
 
