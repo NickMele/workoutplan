@@ -1,18 +1,7 @@
-<div {{bind-attr class=":menu menuOpen"}}>
-  <div class="actions">
-    <span class="menu-close-icon" {{action 'toggleMenu'}}>
-      <i class="fa fa-times"></i>
-    </span>
-  </div>
-  <ul class="link-list">
-    <li>{{#link-to 'week' currentWeek}}This Week{{/link-to}}</li>
-    <li>{{#link-to 'routines'}}Routines{{/link-to}}</li>
-    <li>{{#link-to 'workouts'}}Workouts{{/link-to}}</li>
-  </ul>
-</div>
-
-<div {{bind-attr class=":main-content menuOpen"}}>
+<div class="wrapper">
   {{render "header"}}
 
-  {{outlet}}
+  <div class="main-content">
+    {{outlet}}
+  </div>
 </div>

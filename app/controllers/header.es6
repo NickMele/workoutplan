@@ -1,3 +1,11 @@
 export default Ember.ObjectController.extend({
-  title: 'Workout Plan'  
+  needs: ['application'],
+
+  title: 'Workout Plan',
+
+  menuOpen: Ember.computed.alias('controllers.application.menuOpen'),
+
+  currentWeek: function() {
+    return moment().isoWeek();
+  }.property()
 });

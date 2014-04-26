@@ -1,53 +1,63 @@
-.menu {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: $menu-width;
-	transform: translate3D(-100%,0,0);
-	height: 100%;
-	z-index: 1;
-	box-sizing: border-box;
+.header.menu-open {
+	.circle-container {
+		visibility:visible;
+  	opacity:1;
+		transform: rotate(0deg);
+	}
+
+	&:before {
+		content: ' ';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		background: $gray-dark;
+		opacity: .8;
+	}
+}
+
+.circle-container {
+	@include putOnCircle(3, 14rem, 4rem, false);
+	position: absolute;
+	top: -4rem;
+	right: -4rem;
+	z-index: 2;
+	margin: 0;
+	border-radius: 50%;
 	background: $gray-light;
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-	transition: transform $menu-animation-speed $timing-function;
-	
-	&.menu-open {
-		transform: translate3D(0,0,0);
-		border-right: 1px solid $gray;
-	}
-	
-	.actions {
+	box-shadow: 0 0 .1rem 4rem $gray;
+	transform: rotate(180deg);
+	visibility:hidden;
+  opacity:0;
+	-webkit-backface-visibility: hidden;
+	transition: visibility 0s $timing-function, transform $menu-animation-speed $timing-function;
+
+	a {
 		display: flex;
-		padding: modular-scale(0, $base-size);
-		border-bottom: 1px solid darken($gray-light,1%);
-		justify-content: space-between;
-		font-size: modular-scale(.5, $base-size);
-	}
-	
-	.link-list {
-		li {
-			border-bottom: 0;
+		flex-flow: column;
+		justify-content: space-around;
+		align-content: center;
+		text-align: center;
+		align-items: center;
+		height: 100%;
+		color: $base-font-color;
+		text-decoration: none;
+		i {
+			font-size: 2rem;
+		}
+		span {
+			font-size: modular-scale(-1, $base-size);
 		}
 	}
 }
 
-.main-content {
-	display: block;
-	position: relative;
-	transform: translate3D(0,0,0);
-	transition: transform $menu-animation-speed $timing-function;
-	z-index: 2;
-	background: $application-background;
-	
-	&.menu-open {
-		transform: translate3D($menu-width,0,0); /* X value must be same as Nav width */
-	}
-}
 
 .header {
 	display: flex;
-	padding: modular-scale(0, $base-size);
+	padding: 0;
+	height: 6rem;
 	background: $gray-light;
 	align-items: center;
 	position: relative;
@@ -63,23 +73,21 @@
 		transition: all 200ms $timing-function;
 		font-size: modular-scale(.5, $base-size);
 		font-weight: 300;
-		text-align: center;
-		padding: 0 3rem;
+		text-align: left;
+		padding: 0;
+		margin-left: modular-scale(0, $base-size);
 	}
 
 	.menu-icon {
-		flex: 0;
+		flex: 1;
 		transition: all 200ms $timing-function;
 		text-decoration: none;
 		font-size: modular-scale(.5, $base-size);
 		color: $base-font-color;
 		-webkit-appearance: none;
-		width: 2rem;
+		max-width: 6rem;
 		text-align: center;
 		z-index: 5;
-		i {
-			padding-right: modular-scale(0, $base-size);
-		}
 	}
 
 }

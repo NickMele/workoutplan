@@ -19,7 +19,7 @@ a {
 
 .flex-row {
   display: flex;
-  
+
   &.actions {
     justify-content: space-between;
     border-bottom: 1px solid $border-color-light;
@@ -33,7 +33,7 @@ a {
       }
     }
   }
-  
+
   .flex {
     flex: 1;
   }

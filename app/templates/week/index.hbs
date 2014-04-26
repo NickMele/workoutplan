@@ -12,10 +12,10 @@
           </div>
           <div class="routines">
             {{#if day.totalRoutines}}
-              {{day.totalRoutines}} Routines
+              {{day.totalRoutines}} {{pluralize-string day.totalRoutines s="Routine"}}
               {{#if day.totalWorkouts}}
                 &middot;
-                {{day.totalWorkouts}} Workouts
+                {{day.totalWorkouts}} {{pluralize-string day.totalWorkouts s="Workout"}}
               {{/if}}
             {{else}}
               Rest Day

@@ -8,6 +8,6 @@ export default BaseRoute.extend({
   },
 
   model: function(params) {
-    return this.modelFor('week');
+    return this.store.find('day', params.day_id);
   }
 });

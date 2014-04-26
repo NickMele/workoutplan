@@ -1,6 +1,32 @@
-<div class="header">
-  <span class="menu-icon" {{action 'toggleMenu'}}>
-    <i class="fa fa-bars"></i>
-  </span>
+<div {{bind-attr class=":header menuOpen"}}>
   <div class="title">{{title}}</div>
+  <span class="menu-icon" {{action 'toggleMenu'}}>
+    {{#unless menuOpen}}
+      <i class="fa fa-bars"></i>
+    {{else}}
+      <i class="fa fa-times"></i>
+    {{/unless}}
+  </span>
+
+  {{! MENU}}
+  <ul class='circle-container'>
+    <li>
+      {{#link-to 'week' currentWeek}}
+        <i class="fa fa-calendar"></i>
+        <span>Schedule</span>
+      {{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'routines'}}
+        <i class="fa fa-book"></i>
+        <span>Routines</span>
+      {{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'workouts'}}
+        <i class="fa fa-th-list"></i>
+        <span>Workouts</span>
+      {{/link-to}}
+    </li>
+  </ul>
 </div>
