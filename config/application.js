@@ -14,7 +14,7 @@ Ember.LinkView.reopen({
 });
 
 if (window.navigator.standalone) {
-  $('html').addClass('standalone')
+
 }
 
 window.App = require('app').default.create();
