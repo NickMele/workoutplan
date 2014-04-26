@@ -25,6 +25,11 @@ a {
   color: $base-link-color;
 }
 
+body.standalone {
+	.header {
+		padding-top: 20px;
+	}
+}
 
 .flex-row {
   display: flex;
