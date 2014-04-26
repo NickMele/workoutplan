@@ -20,7 +20,7 @@
 
 .circle-container {
 	@include putOnCircle(3, 14rem, 4rem, false);
-	position: absolute;
+	position: fixed;
 	top: -4rem;
 	right: -4rem;
 	z-index: 2;

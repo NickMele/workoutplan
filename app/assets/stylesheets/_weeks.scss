@@ -37,18 +37,10 @@
         opacity: .25;
       }
       &.completed {
-        .status-container {
-          background: rgba(92, 184, 92,.1);
-          color: $green;
-          display: flex;
-        }
+
       }
       &.skipped {
-        .status-container {
-          background: rgba(210, 50, 45,.1);
-          color: $red;
-          display: flex;
-        }
+
       }
 
       .day-info {

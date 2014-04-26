@@ -1,5 +1,12 @@
 .day-list {
   @extend .link-list;
   padding-bottom: modular-scale(0,$base-size);
-  
+
+}
+
+.rest-day {
+  font-size: modular-scale(1, $base-size);
+  font-weight: 300;
+  margin: 8rem auto;
+  text-align: center;
 }
