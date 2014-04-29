@@ -1,32 +1,16 @@
 <ul class="week-list">
-  {{#each day in filtered itemController="day.index"}}
+  {{#each day in model.days itemController="day.index"}}
     <li>
       {{#link-to "day" day class=day.status}}
-        <div class="day-info">
-          <div class="day">
-            {{format-date day.date format="dddd"}}
-          </div>
-          <div class="routines">
-            {{#if day.routines.length}}
-              {{day.listRoutines}}
-            {{else}}
-              Rest Day
-            {{/if}}
-          </div>
-        </div>
-        <i class="fa fa-lg fa-angle-right"></i>
+        {{#if day.current}}
+          Today
+        {{else}}
+          <div class="date">{{format-date day.date format="MMM D"}}</div>
+          {{format-date day.date format="ddd"}}
+        {{/if}}
       {{/link-to}}
     </li>
   {{/each}}
 </ul>
-<section class="flex-row">
-  <button class="button" {{action "togglePastDays"}}>
-    {{#unless showPastDays}}
-      Show past days
-    {{else}}
-      Hide past days
-    {{/unless}}
-  </button>
-</section>
 
 {{outlet}}

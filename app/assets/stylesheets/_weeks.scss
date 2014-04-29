@@ -1,57 +1,43 @@
 .week-list {
   margin: 0;
-  padding: 0;
+  padding: 0 modular-scale(0, $base-size);
   list-style: none;
-
-  &.border-top {
-    border-top: 1px solid $link-list-border-color;
-  }
-
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $link-list-border-color;
   li {
     margin: 0;
     padding: 0;
     position: relative;
+    // flex: 1;
 
     > a {
-      padding: modular-scale(.5, $base-size) modular-scale(-1, $base-size);
-      margin: 0;
+      padding: modular-scale(0, $base-size) 0;
+      display: block;
+      text-align: center;
+      font-size: modular-scale(-.5, $base-size);
       text-decoration: none;
+      text-transform: uppercase;
       color: inherit;
       position: relative;
       box-sizing: border-box;
-      border-left: .5rem solid transparent;
-      border-bottom: 1px solid $link-list-border-color;
-      display: flex;
-      flex-flow: row;
-      align-items: center;
-      // height: modular-scale(4.5, $base-size);
-
-      &.current {
-        border-left-color: $blue;
-        .date,
-        .day {
-          color: $blue;
-        }
+      .date {
+        font-size: modular-scale(-1.5, $base-size);
       }
-      &.upcoming {
-        opacity: .25;
+      &.current {
+        font-size: modular-scale(-1, $base-size);
+      }
+      &.active {
+        color: $blue;
+        opacity: 1;
       }
       &.completed {
 
       }
       &.skipped {
 
-      }
-
-      .day-info {
-        flex: 2 0;
-        font-size: modular-scale(0, $base-size);
-        color: $light-font-color;
-        .routines {
-          font-size: modular-scale(-.5, $base-size);
-          line-height: modular-scale(.5, $base-size);
-          color: $dark-font-color;
-        }
       }
     }
   }

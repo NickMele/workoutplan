@@ -7,5 +7,9 @@ export default Ember.ObjectController.extend({
 
   currentWeek: function() {
     return moment().isoWeek();
+  }.property(),
+
+  dayOfYear: function() {
+    return moment().dayOfYear();
   }.property()
 });
