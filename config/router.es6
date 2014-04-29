@@ -14,7 +14,9 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.resource('weeks', function() {
     this.resource('week', { path: '/:week_id' }, function() {
-      this.route('day', { path: '/:day_id' });
+      this.resource('day', { path: '/:day_id' }, function() {
+        
+      });
     });
   });
   this.resource('routines', function() {

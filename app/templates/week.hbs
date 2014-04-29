@@ -1,7 +1,7 @@
 <ul class="week-list">
-  {{#each day in filtered itemController="week.day"}}
+  {{#each day in filtered itemController="day.index"}}
     <li>
-      {{#link-to "week.day" day class=day.status}}
+      {{#link-to "day" day class=day.status}}
         <div class="day-info">
           <div class="day">
             {{format-date day.date format="dddd"}}
@@ -28,3 +28,5 @@
     {{/unless}}
   </button>
 </section>
+
+{{outlet}}

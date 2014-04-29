@@ -4,6 +4,6 @@ export default BaseRoute.extend({
   title: 'Weekly Schedule',
 
   model: function(params) {
-    return this.modelFor('week');
+    return this.store.find('week', params.week_id);
 	}
 });
