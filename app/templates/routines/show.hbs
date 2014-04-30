@@ -4,12 +4,22 @@
 </div>
 
 {{!-- LIST THE DAYS --}}
+<h2 class="padded no-padding-bottom">Scheduled</h2>
+<ul class="week-list">
+  {{#each day in scheduledDays}}
+    <li>
+      <span {{bind-attr class="day.scheduled:active"}}>
+        {{day.abbreviation}}
+      </span>
+    </li>
+  {{/each}}
+</ul>
 
 <h2 class="padded no-padding-bottom">Workouts</h2>
 <ul class="link-list">
   {{#each workout in model.workouts}}
     <li>
-      <span>{{workout.name}}</span>
+      {{#link-to "workouts.show" workout}}{{workout.name}}{{/link-to}}
     </li>
   {{/each}}
 </ul>

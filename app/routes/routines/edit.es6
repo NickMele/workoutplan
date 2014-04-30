@@ -8,7 +8,7 @@ export default Ember.Route.extend({
   },
   actions: {
     cancel: function(model) {
-      this.transitionTo('routines.index');
+      this.transitionTo('routines.show', this.get('controller.model'));
     }
   }
 });

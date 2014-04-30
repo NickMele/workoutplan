@@ -19,6 +19,7 @@ export default Ember.ContainerView.extend({
   emptyView: null,
 
   inputView: Ember.TextField.extend({
+    classNames: 'no-margin-bottom',
     placeholderBinding: 'parentView.placeholder',
     value: function(key, value) {
       var parentView = this.get('parentView'),

@@ -6,7 +6,7 @@
 
   <label for="">Give your routine a name</label>
   {{input type="text" value=name placeholder="ex: Upper Body, Arms..."}}
-  
+
   <label for="">What days will you do this routine?</label>
   {{view "routine-days"}}
 
@@ -17,7 +17,7 @@
       <li>
           <span>
             {{workout.name}}
-            <i class="fa fa-times-circle-o red" {{action "removeWorkout" workout bubbles="false"}}></i>
+            <i class="fa fa-lg fa-times-circle-o red" {{action "removeWorkout" workout bubbles="false"}}></i>
           </span>
       </li>
     {{/each}}

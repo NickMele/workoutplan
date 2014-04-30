@@ -43,7 +43,7 @@ export default BaseController.extend({
       workouts.save().then(function() {
         routine.save().then(function() {
           self.store.find('week');
-          self.transitionToRoute('routines.index');
+          self.transitionToRoute('routines.show', routine);
         });
       });
     }

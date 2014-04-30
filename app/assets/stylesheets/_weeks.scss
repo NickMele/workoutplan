@@ -13,7 +13,8 @@
     position: relative;
     // flex: 1;
 
-    > a {
+    > a,
+    > span {
       padding: modular-scale(0, $base-size) 0;
       display: block;
       text-align: center;
@@ -25,6 +26,7 @@
       box-sizing: border-box;
       .date {
         font-size: modular-scale(-1.5, $base-size);
+        font-weight: 300;
       }
       &.current {
         font-size: modular-scale(-1, $base-size);
