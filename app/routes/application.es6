@@ -10,6 +10,9 @@ export default Ember.Route.extend({
 		},
 		openMenu: function() {
 			this.controller.set('menuOpen', true);
+		},
+		closeNotification: function() {
+			this.controllerFor('notifications').send('closeNotification');
 		}
 	}
 

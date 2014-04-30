@@ -14,7 +14,7 @@ export default BaseRoute.extend({
   },
   actions: {
     cancel: function() {
-      this.transitionTo('routines.show', this.get('controller.model'));
+      this.transitionTo('routines.index');
     }
   }
 });

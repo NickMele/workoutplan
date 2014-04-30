@@ -1,5 +1,6 @@
 var BaseController = require('app/controllers/base').default
 export default BaseController.extend({
+  needs: ['notifications'],
 
   actions: {
     addWorkout: function(workout) {
@@ -40,10 +41,33 @@ export default BaseController.extend({
         , workouts = routine.get('workouts');
 
       workouts.save().then(function() {
-        routine.save().then(function() {
-          self.store.find('week');
-          self.transitionToRoute('routines.show', routine);
-        });
+        routine.save().then(
+          function() {
+            self.get('controllers.notifications').send('notify', {
+              title: 'Routine saved!',
+              type: 'success',
+              persists: true
+            });
+            self.store.find('week');
+            self.transitionToRoute('routines.show', routine);
+          },
+          function(reason) {
+            var errors = reason.responseJSON.errors
+              , messages = [];
+            if (errors) {
+              for (var key in errors) {
+                if (errors.hasOwnProperty(key)) {
+                  messages.push(key + ' ' + errors[key]);
+                }
+              }
+            }
+            self.get('controllers.notifications').send('notify', {
+              title: 'Unable to save routine',
+              message: messages,
+              type: 'error'
+            });
+          }
+        );
       });
     }
   }

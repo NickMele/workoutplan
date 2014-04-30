@@ -1,0 +1,31 @@
+.notification {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: modular-scale(0, $base-size);
+  background: $gray;
+  font-size: modular-scale(-.5, $base-size);
+
+  h3 {
+    font-size: modular-scale(0, $base-size);
+  }
+
+  &.error {
+    background: $red;
+    color: $light-font-color;
+
+    h3 {
+      color: $light-font-color;
+    }
+  }
+
+  &.success {
+    background: $green;
+    color: $light-font-color;
+
+    h3 {
+      color: $light-font-color;
+    }
+  }
+}

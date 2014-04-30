@@ -8,6 +8,10 @@ var Router = Ember.Router.extend({
   // location: 'history'
   closeMenuOnUrlChange: function() {
     this.send('closeMenu');
+  }.on('didTransition'),
+
+  closeNotificationsOnUrlChange: function() {
+    this.send('closeNotification');
   }.on('didTransition')
 });
 
@@ -15,7 +19,7 @@ Router.map(function() {
   this.resource('weeks', function() {
     this.resource('week', { path: '/:week_id' }, function() {
       this.resource('day', { path: '/:day_id' }, function() {
-        
+
       });
     });
   });

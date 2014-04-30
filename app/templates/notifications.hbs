@@ -1,0 +1,15 @@
+{{#if notification}}
+  <div {{bind-attr class=":notification notification.type"}} id="notification">
+    {{#if notification.title}}
+    <h3>{{notification.title}}</h3>
+    {{/if}}
+    {{log notification.message}}
+    {{#unless notification.message.errors}}
+      {{notification.message}}
+    {{else}}
+      {{#each notification.message.errors}}
+        {{this}}
+      {{/each}}
+    {{/unless}}
+  </div>
+{{/if}}
